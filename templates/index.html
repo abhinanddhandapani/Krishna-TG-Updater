@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<h2 id="header">Welcome to Krishna Garments Online</h2>
+{% for shop in shops %}
+<!-- Use for loop wisely -->
+    <div id="location" >
+        <h2 id="loc-title">
+            {{ shop }}
+        </h2>
+            {% for det in details[shop]  %}
+            <!-- Lesson don't use {{ }} again and again u fool, link: https://stackoverflow.com/a/47025013 , Wasted nearly 25 mins-->
+            <h4>
+                {{ det }}
+            </h4>
+            {% endfor %}
+    </div>
+{% endfor %}
+{% endblock %}

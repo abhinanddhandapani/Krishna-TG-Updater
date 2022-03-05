@@ -17,7 +17,7 @@ shop_details = [details_shop_1,details_shop_2]
 # This code deals with the adding the shop and list together as a dictionary, for html parsing
 details = {}
 i = 0
-for shop in shops:
+for shop in shop_list:
     details[shop] = shop_details[i]
     i += 1
 
@@ -29,6 +29,9 @@ def index():
     elif request.method == 'POST':
         return "Working"
 
+@app.route("/employee",methods=["GET","POST"])
+def employee():
+    return "200 OK"
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0")

@@ -1,6 +1,7 @@
 # Sales,Sales Items,Sales Return,Sales Return Items,Employee Attendance - (Web Interface,API),Draw Balance (Web,API).
 # Use sqlite
 from flask import Flask, render_template, request, url_for
+from db.core import Employee
 
 app = Flask(__name__)
 
@@ -13,7 +14,6 @@ details_shop_2 = ["Sales : 50000","Sales Return : 100","Active Employees : 5001,
 # Add the details to the list
 shop_details = [details_shop_1,details_shop_2]
 
-
 # This code deals with the adding the shop and list together as a dictionary, for html parsing
 details = {}
 i = 0
@@ -22,6 +22,7 @@ for shop in shop_list:
     i += 1
 
 
+# Home Page
 @app.route("/",methods=["GET","POST"])
 def index():
     if request.method == 'GET': 
@@ -29,9 +30,20 @@ def index():
     elif request.method == 'POST':
         return "Working"
 
+# Employee Page
 @app.route("/employee",methods=["GET","POST"])
 def employee():
-    return "200 OK"
+    if request.method == 'GET':
+        return render_template("employee.html")
+    else:
+        return "200 OK"
+
+# Creator Page :)
+@app.route("/abhinand",methods=["GET","POST"])
+@app.route("/creator",methods=["GET","POST"])
+@app.route("/master",methods=["GET","POST"])
+def master():
+    return "abhinand.xyz"
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0")

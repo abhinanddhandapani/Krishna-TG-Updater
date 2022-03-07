@@ -1,0 +1,4 @@
+#
+DB_HOST = "<host address>" # Enter your host server details 
+DB_USERNAME = "<username>" # Enter your username
+DB_PASSWORD = "<password>" # Enter Your Password

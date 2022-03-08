@@ -4,4 +4,13 @@
 {% endblock %}
 {% block content %}
 <h2 id="header">Employees Platform</h2>
+<div id="container">
+    <h3>Select A Employee : </h3>
+    <select name="employee">
+        {% for emp in employee %}
+            <option value="{{emp}}">{{emp}}</option>
+        {% endfor %}
+    </select>
+    <h3>Current Status : {{emp_status}}</h3>
+</div>
 {% endblock %}

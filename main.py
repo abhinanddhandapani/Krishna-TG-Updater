@@ -28,6 +28,10 @@ for shop in shop_list:
 
 # Home Page
 @app.route("/",methods=["GET","POST"])
+def home():
+    return render_template("home.html")
+
+@app.route("/owner",methods=["GET","POST"])
 def index():
     if request.method == 'GET': 
         return render_template("index.html",title="HomePage",shops = shop_list,details=details) # Here list of shops is updated , details dictionary is passed.
@@ -50,4 +54,4 @@ def master():
     return redirect("https://abhinand.xyz")
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(debug="True",host="0.0.0.0")

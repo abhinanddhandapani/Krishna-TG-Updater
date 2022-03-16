@@ -46,6 +46,11 @@ def employee():
     else:
         return "200 OK"
 
+# List API
+@app.route("/api")
+def api():
+    return "API Active"
+
 # Creator Page :)
 @app.route("/abhinand",methods=["GET","POST"])
 @app.route("/creator",methods=["GET","POST"])
